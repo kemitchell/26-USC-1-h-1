@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "devDependencies": {
+    "docco": "~0.6.2",
+    "glob": "~3.2.1",
+    "should": "~1.2.2",
+    "mocha": "~1.9.0",
+    "coffee-script": "~1.6.2"
+  },
+  "scripts": {
+    "prepublish": "cake build",
+    "test": "cake test"
+  }
+}

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>26 U.S.C. 1(h)(1)</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco-tweaked.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="26-USC-1-h-1.html">
+                26-USC-1-h-1.coffee
+              </a>
+            
+              
+              <a class="source" href="vocabulary.html">
+                vocabulary.coffee
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h1">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h1>26 U.S.C. 1(h)(1)</h1>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>assert = require <span class="string">'assert'</span>
+
+{netCapitalGain} = require <span class="string">'26-USC-1-h-2'</span>
+
+{adjustedNetCapitalGain} = require <span class="string">'26-USC-1-h-3'</span>
+
+{taxWithoutThisSubsection} = (taxpayer, taxYear) -&gt;
+  <span class="keyword">throw</span> <span class="string">'Not implemented'</span>
+
+{sum, excessOf, notExceeding, lesserOf} = require <span class="string">'vocabulary'</span>
+
+module.<span class="function"><span class="title">exports</span></span> = (taxpayer, taxYear) -&gt;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Defined and overridden terms in the scope of 1(h)(1)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  netCapitalGain = netCapitalGain(taxpayer, taxYear)
+
+  adjustedNetCapitalGain = adjustedNetCapitalGain(taxpayer, taxYear)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Treated as a property of the taxpayer for convenience, but actually
+an output of the rest of the Internal Revenue Code</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  taxableIncome = taxpayer.taxableIncome</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Again, treated as a property for convenience</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  taxableIncomeTaxedAtARateBelow25Percent = taxpayer.taxedAtARateBelow25Percent</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Each subparagraph multiplies some &quot;amount&quot; and a rate to yield
+a tax value. The tax values are summed up to derive the cap on
+capital gain taxes and the amount values are shared between certain
+subparagraphs, so both are scoped within (h)(1).</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  subparagraph_A_amount = <span class="literal">undefined</span>
+  subparagraph_B_amount = <span class="literal">undefined</span>
+  subparagraph_C_amount = <span class="literal">undefined</span>
+  subparagraph_D_amount = <span class="literal">undefined</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <h2>Subparagraph A</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  
+  subparagraph_A = <span class="keyword">do</span> -&gt;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <blockquote>
+<p>a tax computed at the rates and in the same manner as if this
+subsection had not been enacted</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    taxWithoutThisSubsection(</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <blockquote>
+<p>on the greater of—</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      subparagraph_A_amount = greaterOf(</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <blockquote>
+<p>(i) taxable income reduced by the net capital gain; or</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        (taxableIncome - netCapitalGain),</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <blockquote>
+<p>(ii) the lesser of—</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        lesserOf(</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <blockquote>
+<p>(I) the amount of taxable income taxed at a rate below 25
+percent; or</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>          taxableIncomeTaxedAtARateBelow25Percent,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <blockquote>
+<p>(II) taxable income reduced by the adjusted net capital
+gain;</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>          (taxableIncome - adjustedNetCapitalGain)
+        )
+      )
+    )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <h2>Subparagraph B</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  subparagraph_B = <span class="keyword">do</span> -&gt;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <blockquote>
+<p>5 percent (0 percent in the case of taxable years beginning
+after 2007)</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    rate = <span class="keyword">if</span> taxYear &gt; <span class="number">2007</span> <span class="keyword">then</span> <span class="number">0</span> <span class="keyword">else</span> <span class="number">0.05</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <blockquote>
+<p>of so much of the adjusted net capital gain (or, if less,
+taxable income) as does not exceed</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    subparagraph_B_amount = notExceeding(
+      (
+        <span class="keyword">if</span> taxableIncome &lt; adjustedNetCapitalGain
+          taxableIncome
+        <span class="keyword">else</span>
+          adjustedNetCapitalGain
+      ),</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <blockquote>
+<p>the excess (if any) of—</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      excessOf(</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <blockquote>
+<p>(i) the amount of taxable income which would (without
+regard to this paragraph) be taxed at a rate below 25
+percent, over</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        taxableIncomeTaxedAtARateBelow25Percent,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <blockquote>
+<p>(ii) the taxable income reduced by the adjusted net
+capital gain;</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        (taxableIncome - adjustedNetCapitalGain)
+      )
+    )
+
+    rate * subparagraph_B_amount</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <h2>Subparagraph C</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  subparagraph_C = <span class="keyword">do</span> -&gt;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <blockquote>
+<p>15 percent of</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    rate = <span class="number">0.15</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <blockquote>
+<p>the adjusted net capital gain (or, if less, taxable income) in
+excess of</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    subparagraph_C_amount = excessOf(
+      (
+        <span class="keyword">if</span> taxableIncome &lt; adjustedNetCapitalGain
+          taxableIncome
+        <span class="keyword">else</span>
+          adjustedNetCapitalGain
+      ),</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <blockquote>
+<p>the amount on which a tax is determined under
+subparagraph (B);</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      subparagraph_B_amount <span class="comment"># (ii)</span>
+    )
+    rate * subparagraph_C_amount</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <h2>Subparagraph D</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  subparagraph_D = <span class="keyword">do</span> -&gt;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <blockquote>
+<p>25 percent of</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    rate = <span class="number">0.25</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <blockquote>
+<p>the excess (if any) of—</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    subparagraph_D_amount = excessOf(</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <blockquote>
+<p>(i) the unrecaptured section 1250 gain (or, if less, the net
+capital gain (determined without regard to paragraph (11))),
+over</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      (
+        <span class="keyword">if</span> netCapitalGainWithoutParagraph11 &lt; unrecapturedSection1250Gain
+          netCapitalGainWithoutParagraph11
+        <span class="keyword">else</span>
+          unrecapturedSection1250Gain
+      ),</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <blockquote>
+<p>(ii) the excess (if any) of—</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      excessOf(</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <blockquote>
+<p>(I) the sum of the amount on which tax is determined under
+subparagraph (A) plus [sic?] the net capital gain, over</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        sum(subparagraph_A_amount + netCapitalGain),</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
+              </div>
+              <blockquote>
+<p>(II) taxable income; and</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        taxableIncome
+      )
+    )
+
+    rate * subparagraph_D_amount</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-30">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-30">&#182;</a>
+              </div>
+              <h2>Subparagraph E</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  
+  subparagraph_E = <span class="keyword">do</span> -&gt;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-31">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <blockquote>
+<p>28 percent of</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    rate = <span class="number">0.28</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
+              <blockquote>
+<p>the amount of taxable income in excess of</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    rate * excessOf(
+      taxableIncome,</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-33">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <blockquote>
+<p>the sum of the amounts on which tax is determined under
+the preceding subparagraphs of this paragraph.</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      sum(
+        subparagraph_A_amount,
+        subparagraph_B_amount,
+        subparagraph_C_amount,
+        subparagraph_D_amount,
+      )
+    )</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-34">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-34">&#182;</a>
+              </div>
+              <blockquote>
+<p>(h)(1) If a taxpayer has a net capital gain for any taxable
+year, the tax imposed by this section for such taxable year
+shall not exceed the sum of</p>
+</blockquote>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">if</span> netCapitalGain &gt; <span class="number">0</span>
+    assert(
+      capitalGainsTax &lt;= sum(
+        subparagraph_A,
+        subparagraph_B,
+        subparagraph_C,
+        subparagraph_D,
+        subparagraph_E
+      )
+    )</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
