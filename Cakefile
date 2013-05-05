@@ -16,28 +16,16 @@ task 'build', 'Translate CoffeeScript source files', (options) ->
   args.unshift '-w' if !!options.watch
   launch COFFEE, args
 
-MOCHA = 'node_modules/mocha/bin/mocha'
-
-task 'test', 'run tests', (options) ->
-  glob "test/*.coffee", (err, files) ->
-    files.unshift '-w' if !!options.watch
-    files.unshift 'coffee:coffee-script'
-    files.unshift '--compilers'
-    files.unshift '--colors'
-    app = launch MOCHA, files
-
 DOCCO = 'node_modules/docco/bin/docco'
 
-task 'doc', 'generate documentation', (options) ->
-  glob '*.coffee', (err, files) ->
-    files.unshift 'docco-tweaked.css'
-    files.unshift '-c'
+task 'docs', 'generate documentation', (options) ->
+  glob 'src/*.coffee', (err, files) ->
     launch DOCCO, files
 
 MOCHA = 'node_modules/mocha/bin/mocha'
 
 task 'test', 'run tests', (options) ->
-  glob "test/*.coffee", (err, files) ->
+  glob "test/*_test.coffee", (err, files) ->
     files.unshift '-w' if !!options.watch
     files.unshift 'coffee:coffee-script'
     files.unshift '--compilers'

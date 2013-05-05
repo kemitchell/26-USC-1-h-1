@@ -1,4 +1,4 @@
-vocabulary = require '../vocabulary'
+vocabulary = require '../src/vocabulary'
 
 describe 'vocabulary', ->
   describe 'excessOf', ->
