@@ -99,7 +99,7 @@ module.exports = (taxpayer, taxYear) ->
 
     # > the amount on which a tax is determined under
     # > subparagraph (B);
-    subparagraph_B_amount # (ii)
+    subparagraph_B_amount
   )
 
   subparagraph_C_tax = subparagraph_C_rate * subparagraph_C_amount
